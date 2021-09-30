@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+  const clickHandler = (event) => {
+    event.preventDefault();
+    const elem = event.target.getAttribute("data-icon");
+    console.log(elem);
+    document.execCommand(elem);
+
+  }
+
+
+  return <React.Fragment>
+              <header className="header">Rich Text Editor</header>
+              <div className="editor-container">
+              <div className="richTextOptions">
+              <div className="icon" data-icon="bold" onClick={clickHandler} > <i className='fas fa-bold' data-icon="bold"></i></div>
+              <div className="icon"> <i className='fas fa-italic'></i></div>
+             
+              </div>
+              <div className="editor" contentEditable={true}></div>
+              </div>
+          </React.Fragment>
+
 }
 
 export default App;
