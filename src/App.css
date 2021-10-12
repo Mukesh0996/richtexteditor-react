@@ -8,7 +8,7 @@
   border-radius: 0 0 20px 20px;
   font-family: "Lato";
   color: white;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
 }
 
 .editor-container {
@@ -22,7 +22,7 @@
 }
 
 .richTextOptions {
-  width: 50%;
+  width: 100%;
   border: 1px solid #ccc;
   border-bottom: none;
   border-radius: 10px 10px 0 0;
@@ -45,18 +45,21 @@
   background: rgb(234, 233, 233);
   cursor: pointer;
 }
-.alignment {
+.alignment, .fontsize {
   position: relative;
 }
-.alignment_options {
+.alignment_options, .fontsize_options {
   position: absolute;
-  bottom: -105px;
+  top: 40px;
   background: white;
   border: 1px solid rgb(100, 225, 239);
   border-radius: 5px;
   transform: scale(0);
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   transform-origin: top left;
+}
+.fontsize_options {
+  top: 40px;
 }
 
 .show {
